@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+.link-container {
+  display: flex;
+}
+
+.link-container nav {
+  height: 4em;
+  width: 100vw;
+  background-color: rgb(249, 137, 0);
+  position: absolute;
+}
+
+.link-container nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.link-container nav ul li {
+  list-style-type: none;
+  padding: 4px 24px;
+}
+.link-container nav ul li a {
+  text-decoration: none !important;
+  font-size: 18px;
+  color: black;
+}
+
+.link-container nav ul li a:hover {
+  color: purple;
+}
