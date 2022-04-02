@@ -1,13 +1,21 @@
 import React from "react";
 import { Field, Form } from "react-final-form";
 import "./Login.css";
+import { useHistory } from "react-router-dom";
+
 const Login = () => {
+  const history = useHistory();
+  const submit = (data) => {
+    console.log(data);
+    if (data.password === "007") {
+      history.push("/navigator/githubfinder");
+    } else {
+      alert("Wrong Password! Hint : JamesBond!");
+    }
+  };
+
   return (
-    <Form
-      onSubmit={(data) => {
-        console.log(data);
-      }}
-    >
+    <Form onSubmit={submit}>
       {({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
           <div className="container">

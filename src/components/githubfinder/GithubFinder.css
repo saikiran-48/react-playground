@@ -1,0 +1,30 @@
+body {
+  background-color: rgb(89, 89, 89);
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 65px;
+  align-items: center;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+}
+
+.input-field {
+  width: 14rem;
+  height: 3em;
+}
+
+.submit-btn {
+  height: 3em;
+}
+
+.user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
