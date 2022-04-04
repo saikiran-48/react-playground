@@ -14,10 +14,11 @@ export default function GithubFinder() {
         setData(value);
       });
   };
+  console.log(data);
   return (
     <>
       <div className="main-container">
-        <form onSubmit={submitHandler}>
+        <form style={{ marginTop: "36px" }} onSubmit={submitHandler}>
           <input
             type="search"
             placeholder="search username"
@@ -32,9 +33,9 @@ export default function GithubFinder() {
       {data ? (
         <div className="card">
           <div className="user-info">
-            <h2>{data?.name}</h2>
+            <h2 style={{ margin: "16px 0 0 0 " }}>{data?.name}</h2>
           </div>
-          <div>
+          <div className="wrapper-card">
             <ul className="list-main">
               <li>
                 {data?.followers} <strong>Followers</strong>
