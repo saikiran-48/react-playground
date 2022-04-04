@@ -1,20 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import About from "../About";
+import {
+  BrowserRouter as Router,
+  useHistory,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
+import DebounceSearch from "../login/debounce/DebounceSearch";
 import GithubFinder from "../githubfinder/GithubFinder";
-import Home from "../Home";
 import "./Navigator.css";
 export default function Navigator() {
+  const history = useHistory();
+
+  const logout = () => {
+    history.push("/");
+  };
   return (
     <Router>
       <div className="link-container">
-        <nav>
+        <nav className="navigation-bar">
           <ul>
             <li>
               <Link to="/navigator/githubfinder">Github Finder</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/navigator/debouncesearch">Debounce Search</Link>
             </li>
             <li>
               <Link to="/users">Users</Link>
@@ -26,20 +36,21 @@ export default function Navigator() {
               <Link to="/users">Users</Link>
             </li>
           </ul>
-          <Switch>
-            <Route path="/navigator/githubfinder">
-              <GithubFinder />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/users">{/* <Users /> */}</Route>
-            {/* <Route path="/">
-              <Home />
-            </Route> */}
-          </Switch>
+
+          <p onClick={logout} className="logout">
+            Logout
+          </p>
         </nav>
       </div>
+      <Switch>
+        <Route path="/navigator/githubfinder">
+          <GithubFinder />
+        </Route>
+        <Route path="/navigator/debouncesearch">
+          <DebounceSearch />
+        </Route>
+        <Route path="/users">{/* <Users /> */}</Route>
+      </Switch>
     </Router>
   );
 }

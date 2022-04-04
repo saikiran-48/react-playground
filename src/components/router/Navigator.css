@@ -6,11 +6,14 @@
   display: flex;
 }
 
-.link-container nav {
+.navigation-bar {
   height: 4em;
   width: 100vw;
   background-color: rgb(249, 137, 0);
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .link-container nav ul {
@@ -31,4 +34,9 @@
 
 .link-container nav ul li a:hover {
   color: purple;
+}
+
+.logout {
+  padding: 4px 24px;
+  cursor: pointer;
 }
