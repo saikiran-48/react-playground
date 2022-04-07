@@ -6,7 +6,8 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import DebounceSearch from "../login/debounce/DebounceSearch";
+import DebounceSearch from "../debounce/DebounceSearch";
+import EmailEditing from "../emaileditor/EmailEditing";
 import GithubFinder from "../githubfinder/GithubFinder";
 import "./Navigator.css";
 export default function Navigator() {
@@ -27,7 +28,7 @@ export default function Navigator() {
               <Link to="/navigator/debouncesearch">Debounce Search</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/navigator/users">Users</Link>
             </li>
             <li>
               <Link to="/users">Users</Link>
@@ -49,7 +50,9 @@ export default function Navigator() {
         <Route path="/navigator/debouncesearch">
           <DebounceSearch />
         </Route>
-        <Route path="/users">{/* <Users /> */}</Route>
+        <Route path="/navigator/users">
+          <EmailEditing />
+        </Route>
       </Switch>
     </Router>
   );
